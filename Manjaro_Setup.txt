@@ -1,0 +1,189 @@
+sudo pamac update
+sudo pamac upgrade
+sudo pacman -Syyu
+
+sudo pamac install neofetch htop bashtop
+sudo pamac install vi vim neovim vint
+
+sudo pamac install kitty bat lsd
+
+sudo pamac install gh
+gh auth login
+
+# Adding SSH key to github
+ssh-keygen -t ed25519 -C "aryanbansal2002@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+
+sudo pamac install python-pip gdb starship gnupg lsd
+
+# Adding GPG key to github
+gpg --full-generate-key
+# Choose RSA
+
+gpg --list-secret-keys --keyid-format=long
+gpg --armor --export <hash>
+# Replace <hash> with whatever is after rsa4096
+
+gh auth refresh -s read:gpg_key
+gh gpg-key list
+
+mkdir .alias
+export PATH="$HOME/.local/bin:$PATH"
+pip install thefuck
+
+sudo pamac install the_silver_searcher zsh_syntax_highlighting
+
+mkdir ~/Git_Clones
+cd ~/Git_Clones
+gh repo clone zsh-users/zsh-syntax-highlighting
+# Add the following line to .zshrc:
+source /home/pyrole/Git_Clones/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+sudo pamac install zsh-autosuggestions
+cd ~/Git_Clones
+gh repo clone zsh-users/zsh-autosuggestions
+# Add the following line to .zshrc:
+source /home/pyrole/Git_Clones/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+sudo pamac install nvtop teams zoom xclip npm tree
+sudo pamac install zathura
+# MuPDF is better than poppler if asked to select
+
+pip install neovim
+sudo npm install -g npm
+sudo npm install -g neovim
+pip instll pynvim
+pip install 'python-lsp-server[all]' pylsp-mypy pyls-isort
+wget https://nodejs.org/dist/v14.15.4/node-v14.15.4-linux-x64.tar.xz
+mkdir -p $HOME/tools
+tar xvf node-v14.15.4-linux-x64.tar.xz --directory=$HOME/tools
+# Add the following line to .zshrc:
+export PATH="$HOME/tools/node-v14.15.4-linux-x64/bin:$PATH"
+sudo npm install -g vim-language-server
+sudo pamac install python-pylint
+pip install pylint
+pip install flake8
+mv ~/node-v14.15.4-linux-x64.tar.xz ~/Downloads
+
+mkdir ~/bin
+export PATH="$HOME/bin:$PATH"
+
+sudo pamac install obs-studio rofi
+# Add shortcut to the following command:
+rofi -show drun
+
+sudo pamac install rust
+
+cd ~/Git_Clones
+gh repo clone wting/autojump
+cd autojump
+./install.py
+
+# Installing Language Servers
+npm install -g yarn
+yarn global add diagnostic-languageserver
+
+# Arduino
+sudo pamac install go
+go install github.com/arduino/arduino-language-server@latest
+cd ~
+curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
+arduino-cli core update-index
+arduino-cli board list
+
+# Assebly
+cargo install asm-lsp
+
+# Bash
+npm i -g bash-language-server
+
+# Clang
+sudo pamac install clang
+
+# Cmake
+pip install cmake-language-server
+
+# Csharp
+sudo pamac install dotnet-sdk
+dotnet tool install --global csharp-ls
+
+npm i -g vscode-langservers-extracted
+
+# CSS
+npm install -g cssmodules-language-server
+
+# Dotls
+npm install -g dot-language-server
+
+# Emmet
+npm install -g emmet-ls
+
+# Haskell
+sudo pamac install haskell-language-server-static
+
+# Python
+pip install pyright
+
+# SQL
+npm i -g sql-language-server
+
+# TOML
+cargo install --features lsp --locked taplo-cli
+
+# Latex
+cargo install texlab
+sudo pamac install texlive-core
+sudo pamac install texlive-bin texlive-latexextra
+sudo pamac install texlive-science
+sudo pamac install texlive-fontsextra
+
+# Vimls
+npm install -g vim-language-server
+
+# Markdown
+sudo pamac install zk
+
+sudo pamac install gdb ninja
+cd ~/.local/share/nvim/site/pack/packer/start
+cd lua-language-server
+git submodule update --depth 1 --init --recursive
+cd 3rd/luamake
+./compile/install.sh
+cd ../..
+./3rd/luamake/luamake rebuild
+
+sudo pamac install gdb gotop-bin
+
+sudo mkdir -p /usr/local/git/share/git-core/templates
+sudo mkdir -p /usr/share/git-core/templates
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+git config --global user.email "aryanbansal2002@gmail.com"
+git config --global user.name "Pyrole-2002"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

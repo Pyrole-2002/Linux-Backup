@@ -1,0 +1,13 @@
+# In case of virtual machine, we first change the following VM settings
+# System >> Motherboard:
+#   Enable EFI
+# System >> Processor:
+#   Set number of processors
+# Display >> Screen:
+#   Increase Video Memory to max
+#   Graphics Controller VBoxSVGA
+# Network >> Adapter 1:
+#   Attached to: Bridged Adapter
+#   Network >> Adapter 1 >> Advanced:
+#       Promiscuous Mode: Allow All
+# Configure Storage >> Controller: IDE
