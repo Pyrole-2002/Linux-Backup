@@ -38,14 +38,28 @@ git config --global commit.gpgsign true
 
 [ -f ~/.zshrc ] && echo 'export GPG_TTY=$(tty)' >> ~/.zshrc
 
+# ZSH Config
+autoload -U zsh-newuser-install
+zsh-newuser-install -f
+
+# If want to run ONLY the config wizard for autocompletion
+# If u run zsh-newuser-install, this will be covered
+autoload -Uz compinstall
+compinstall
+
 # Starship
 pamac install starship
 
-mkdir .alias
-export PATH="$HOME/.local/bin:$PATH"
+nvim ~/.alias
+# Copy the backup of .alias here
+
+mkdir ~/Programming
+cd ~/Programming
+mkdir C C++ Python Rust
+
 pip install thefuck
 
-sudo pamac install the_silver_searcher zsh_syntax_highlighting
+pamac install the_silver_searcher zsh_syntax_highlighting
 
 mkdir ~/Git_Clones
 cd ~/Git_Clones
