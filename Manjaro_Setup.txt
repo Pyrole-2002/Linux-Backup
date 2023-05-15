@@ -5,7 +5,6 @@ sudo pacman -Syyu
 pamac install neofetch htop bashtop gotop
 pamac install vi vim neovim vint
 pamac install bat lsd
-pamac install code
 
 pamac install kitty
 # Move the kitty.conf into .config/kitty
@@ -58,6 +57,24 @@ cd ~/Programming
 mkdir C C++ Python Rust
 
 pip install thefuck
+pamac install ttf-jetbrains-mono-nerd
+
+# JetBrains Toolbox
+# Download tar.gz from website
+tar -xvzf jetbrains-toolbox-*.tar.gz
+sudo mv jetbrains-toolbox-* /opt/
+sudo ln -s /opt/jetbrains-toolbox/jetbrains-toolbox /usr/local/bin/
+sudo chmod +x /opt/jetbrains-toolbox/jetbrains-toolbox
+jetbrains-toolbox
+# Using Toolbox install relevant IDE's
+
+# VS Code
+# Download tar.gz from website
+tar -xvzf code-stable-*.tar.gz
+sudo mv VSCode-linux-x64 /opt/
+sudo ln -s /opt/VSCode-linux-x64/bin/code /usr/local/bin/
+sudo chmod +x /opt/VSCode-linux-x64/bin/code
+code
 
 pamac install the_silver_searcher zsh_syntax_highlighting
 
@@ -95,11 +112,7 @@ mv ~/node-v14.15.4-linux-x64.tar.xz ~/Downloads
 mkdir ~/bin
 export PATH="$HOME/bin:$PATH"
 
-sudo pamac install obs-studio rofi
-# Add shortcut to the following command:
-rofi -show drun
-
-sudo pamac install rust
+sudo pamac install obs-studio
 
 cd ~/Git_Clones
 gh repo clone wting/autojump
@@ -170,7 +183,7 @@ npm install -g vim-language-server
 # Markdown
 sudo pamac install zk
 
-sudo pamac install gdb ninja
+sudo pamac install ninja
 cd ~/.local/share/nvim/site/pack/packer/start
 cd lua-language-server
 git submodule update --depth 1 --init --recursive
@@ -179,36 +192,6 @@ cd 3rd/luamake
 cd ../..
 ./3rd/luamake/luamake rebuild
 
-sudo pamac install gdb gotop-bin
-
 sudo mkdir -p /usr/local/git/share/git-core/templates
 sudo mkdir -p /usr/share/git-core/templates
 ssh-keyscan github.com >> ~/.ssh/known_hosts
-git config --global user.email "aryanbansal2002@gmail.com"
-git config --global user.name "Pyrole-2002"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
