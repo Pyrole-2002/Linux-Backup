@@ -76,21 +76,31 @@ sudo ln -s /opt/VSCode-linux-x64/bin/code /usr/local/bin/
 sudo chmod +x /opt/VSCode-linux-x64/bin/code
 code
 
-pamac install the_silver_searcher zsh_syntax_highlighting
+pamac install npm
+
+# Mongosh install
+pamac build mongodb-bin
+pamac build mongodb-tools-bin
+pamac build mongodb-compass
+sudo systemctl start mongodb
+sudo systemctl enable mongodb
+
+# For Anaconda installation, follow website
+# To deactivate base environment run:
+conda config --set auto_activate_base False
 
 mkdir ~/Git_Clones
 cd ~/Git_Clones
-gh repo clone zsh-users/zsh-syntax-highlighting
-# Add the following line to .zshrc:
-source /home/pyrole/Git_Clones/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-sudo pamac install zsh-autosuggestions
+
+pamac install the_silver_searcher zsh_syntax_highlighting
+
 cd ~/Git_Clones
-gh repo clone zsh-users/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions
 # Add the following line to .zshrc:
 source /home/pyrole/Git_Clones/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-sudo pamac install nvtop teams zoom xclip npm tree
-sudo pamac install zathura
+pamac install xclip tree
+pamac install zathura
 # MuPDF is better than poppler if asked to select
 
 pip install neovim
@@ -110,12 +120,11 @@ pip install flake8
 mv ~/node-v14.15.4-linux-x64.tar.xz ~/Downloads
 
 mkdir ~/bin
-export PATH="$HOME/bin:$PATH"
 
 sudo pamac install obs-studio
 
 cd ~/Git_Clones
-gh repo clone wting/autojump
+git clone https://github.com/wting/autojump.git
 cd autojump
 ./install.py
 
@@ -131,57 +140,13 @@ curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.
 arduino-cli core update-index
 arduino-cli board list
 
-# Assebly
-cargo install asm-lsp
-
-# Bash
-npm i -g bash-language-server
-
-# Clang
-sudo pamac install clang
-
-# Cmake
-pip install cmake-language-server
-
-# Csharp
-sudo pamac install dotnet-sdk
-dotnet tool install --global csharp-ls
-
-npm i -g vscode-langservers-extracted
-
-# CSS
-npm install -g cssmodules-language-server
-
-# Dotls
-npm install -g dot-language-server
-
-# Emmet
-npm install -g emmet-ls
-
-# Haskell
-sudo pamac install haskell-language-server-static
-
-# Python
-pip install pyright
-
-# SQL
-npm i -g sql-language-server
-
-# TOML
-cargo install --features lsp --locked taplo-cli
-
 # Latex
-cargo install texlab
-sudo pamac install texlive-core
-sudo pamac install texlive-bin texlive-latexextra
-sudo pamac install texlive-science
-sudo pamac install texlive-fontsextra
-
-# Vimls
-npm install -g vim-language-server
-
-# Markdown
-sudo pamac install zk
+pamac install texlive-full
+# Find install location something like /opt/texlive/2023/bin/x86_64-linux
+# Add export PATH="$PATH:/opt/texlive/2023/bin/x86_64-linux" to ~/.profile
+cd /usr/local/bin
+sudo ln -s /opt/texlive/2023/bin/x86_64-linux/latexmk
+sudo ln -s /opt/texlive/2023/bin/x86_64-linux/bibtex
 
 sudo pamac install ninja
 cd ~/.local/share/nvim/site/pack/packer/start
