@@ -9,6 +9,12 @@ pamac install bat lsd
 pamac install kitty
 # Move the kitty.conf into .config/kitty
 
+# Change to cloudflare DNS
+https://developers.cloudflare.com/1.1.1.1/setup/linux/
+
+# NordVPN
+pamac install nordvpn-bin
+
 # GitHub Setup
 git config --global user.name "Pyrole-2002"
 git config --global user.email aryanbansal2002@gmail.com
@@ -68,6 +74,8 @@ sudo chmod +x /opt/jetbrains-toolbox/jetbrains-toolbox
 jetbrains-toolbox
 # Using Toolbox install relevant IDE's
 
+# Install ookla speedtest cli
+
 # VS Code
 # Download tar.gz from website
 tar -xvzf code-stable-*.tar.gz
@@ -102,6 +110,21 @@ source /home/pyrole/Git_Clones/zsh-autosuggestions/zsh-autosuggestions.zsh
 pamac install xclip tree
 pamac install zathura
 # MuPDF is better than poppler if asked to select
+
+# NordVPN
+pamac install nordvpn-bin
+sudo usermod -aG nordvpn $USER
+reboot
+sudo systemctl restart nordvpnd
+nordvpn login
+nordvpn set technology nordlynx
+
+# Lunarvim
+pamac install make
+# Install cargo
+curl https://sh.rustup.rs -sSf | sh
+pamac install lazygit
+# Follow install instructions on website
 
 pip install neovim
 sudo npm install -g npm
@@ -160,3 +183,6 @@ cd ../..
 sudo mkdir -p /usr/local/git/share/git-core/templates
 sudo mkdir -p /usr/share/git-core/templates
 ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+# Cybersecurity
+pamac install net-tools
